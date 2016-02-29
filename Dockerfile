@@ -1,10 +1,15 @@
-FROM conyac/base:latest
+FROM debian:jessie
 
+ENV LANG=en_US.UTF-8 DEBIAN_FRONTEND=noninteractive 
 # Install packages for building ruby
-RUN apt-get -y update
-RUN apt-get install -y software-properties-common xvfb \
-    fonts-ipafont-gothic openjdk-7-jre-headless firefox &&  apt-get clean
-ADD http://selenium-release.storage.googleapis.com/2.48/selenium-server-standalone-2.48.2.jar /opt/selenium-server.jar
+RUN echo 'deb http://packages.linuxmint.com debian import' >> /etc/apt/sources.list \
+  && apt-get update \
+  &&  apt-get install -y --force-yes --no-install-recommends software-properties-common xvfb \
+  fonts-ipafont-gothic openjdk-7-jre-headless firefox \
+ && apt-get clean &&  rm -rf /var/lib/apt/lists/* 
+
+ADD http://selenium-release.storage.googleapis.com/2.52/selenium-server-standalone-2.52.0.jar /opt/selenium-server.jar
+
 Add ./start.sh /opt/start.sh
 RUN chmod +x /opt/start.sh
 CMD /opt/start.sh
