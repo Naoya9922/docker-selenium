@@ -5,7 +5,7 @@ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-ke
 echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
 apt-get update 
 
-apt-get install -y --no-install-recommends software-properties-common xvfb x11vnc  libasound2 libxcomposite1 x11vnc fonts-ipafont-gothic openjdk-9-jre-headless firefox google-chrome-stable
+apt-get install -y --no-install-recommends software-properties-common xvfb x11vnc  libasound2 libxcomposite1 x11vnc fonts-ipafont-gothic openjdk-9-jre-headless firefox google-chrome-stable dbus
 
 apt-get clean 
 rm -rf /var/lib/apt/lists/* 
