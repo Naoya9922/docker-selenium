@@ -1,7 +1,7 @@
-FROM conyac/base:ubuntu20170517.1
+FROM conyac/base:ubuntu20171201
 
-ENV SELENIUM_VERSION=3.6.0 \
-    GECKODRIVER_VERSION=0.19.0
+ENV SELENIUM_VERSION=3.8.1 \
+    GECKODRIVER_VERSION=0.19.1
 
 COPY ./scripts /opt/
 RUN /opt/build.sh

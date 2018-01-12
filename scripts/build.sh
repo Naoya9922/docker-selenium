@@ -7,7 +7,7 @@ apt-get install -y --no-install-recommends software-properties-common xvfb x11vn
 
 apt-get clean 
 rm -rf /var/lib/apt/lists/* 
-curl http://selenium-release.storage.googleapis.com/3.6/selenium-server-standalone-${SELENIUM_VERSION}.jar -o /opt/selenium-server.jar
+curl http://selenium-release.storage.googleapis.com/3.8/selenium-server-standalone-${SELENIUM_VERSION}.jar -o /opt/selenium-server.jar
 
 # geckdriver 
 curl -L https://github.com/mozilla/geckodriver/releases/download/v${GECKODRIVER_VERSION}/geckodriver-v${GECKODRIVER_VERSION}-linux64.tar.gz -o /tmp/geckodriver.tar.gz
